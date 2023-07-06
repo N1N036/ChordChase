@@ -377,7 +377,6 @@ var freq2 = 440 * 2 ** ((key2 - 49) / 12);
 
     // Push the consonance value into the array
     consonanceValues.push(hypotheticalConsonance);
-    // Normalizing consonance value to 0-1 range
 
     }
 
