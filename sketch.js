@@ -321,6 +321,7 @@ function keyPressed() {
 function resetGame() {
     PlayerDrift = 0;
     t = 0;
+    Score = 0;
 }
 
 
@@ -456,20 +457,14 @@ PlayerDrift = constrain(PlayerDrift, -windowWidth, 0)
   textSize(20);
   fill(255); // white color
   Score += (1 - constrain(consonance, 0, 1)) * deltaTime / 10;
-  text("Score: " + Math.floor(Score), 100, windowHeight - 100);
+        text("Score: " + Math.floor(Score), windowWidth/2, windowHeight - 100);
+                text("High Score: " + highScore, windowWidth /2, windowHeight - 80);
 
   mappedConsonance = map(consonance, 0, 1, 1, 0);
   mappedConsonance = constrain(mappedConsonance, 0, 1);
-
-
-
         if (PlayerDrift < -windowWidth/2) {
             gameState = "gameover";
         }
-        // ...
-        text("Score: " + Math.floor(Score), 100, windowHeight - 100);
-        // Display the highscore
-        text("High Score: " + highScore, 100, windowHeight - 80);
     } else if (gameState === "gameover") {
     if (t > highScore) {
             highScore = Math.floor(Score);
